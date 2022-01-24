@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statsheet</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class ="parallax">
+        <div class="mydiv">
+            <h1>What agent would you like to view your stats for?</h1>
+            <br>
+            <select id="agentStats" name="agentStats" onchange="loadStats();">
+                <option value=0>Astra</option>
+                <option value=1>Breach</option>
+                <option value=2>Brimstone</option>
+                <option value=3>Chamber</option>
+                <option value=4>Cypher</option>
+                <option value=5>Jett</option>
+                <option value=6>KAY/O</option>
+                <option value=7>Killjoy</option>
+                <option value=8>Neon</option>
+                <option value=9>Omen</option>
+                <option value=10>Phoenix</option>
+                <option value=11>Raze</option>
+                <option value=12>Reyna</option>
+                <option value=13>Sage</option>
+                <option value=14>Skye</option>
+                <option value=15>Sova</option>
+                <option value=16>Viper</option>
+                <option value=17>Yoru</option>
+            </select>
+            <br>
+            <h3>Kills: </h3>
+            <p id="kills"></p>
+            <h3>Deaths: </h3>
+            <p id="deaths"></p>
+            <h3>K/D ratio: </h3>
+            <p id="kd"></p>
+            <br>
+            <h3>Wins: </h3>
+            <p id="wins"></p>
+            <h3>Losses: </h3>
+            <p id="losses"></p>
+        </div>
+    </div>
+    <div class="mydiv">     
+        <a href="form.html"><button>Click here to calculate your stats</button></a>
+        <br>
+        <a href="index.html"><button>Home</button></a>
+    </div>
+</body>
+</html>
