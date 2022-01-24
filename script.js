@@ -10,8 +10,8 @@ if (getCookie("stats") == "" || getCookie("stats") == null){
     console.log("Cookie Exist");
 }
 function compile(){
-    var kills = parseInt(document.getElementById("kills").value);
-    var deaths = parseInt(document.getElementById("deaths").value);
+    var kills = parseInt(document.getElementById("kill").value);
+    var deaths = parseInt(document.getElementById("death").value);
     var result = document.getElementsByName("WorL");
     var agent = document.getElementById("agents").value;
     
