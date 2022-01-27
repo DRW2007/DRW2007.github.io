@@ -48,7 +48,7 @@
             <input type="radio" id="lose" name="WorL" value="lose">
             <label for="lose">Lose</label>
             <br>
-            <button type="button" onclick="compile(); setCookie('stats', stats, 30);" style="width: 75px;"></button>
+            <button type="button" onclick="compile(document.getElementsByName(`WorL`)); setCookie('stats', stats, 30);" style="width: 75px;"></button>
         </form>
 
 
