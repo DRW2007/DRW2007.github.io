@@ -18,6 +18,10 @@ function compile(result){
     var deaths = parseInt(document.getElementById("death").value);
     var agent = document.getElementById("agents").value;
     
+    if(isNaN(kills) || isNaN(deaths)){
+        return
+    }
+    
     if (result[0].checked){
         totalWins ++;
         stats[agent][2][0] ++;
@@ -28,9 +32,6 @@ function compile(result){
         return
     } 
     
-    if(isNaN(kills) || isNaN(deaths)){
-        return
-    }
     totalKills += kills;
     totalDeaths += deaths;
     stats[agent][1][0] += kills;
