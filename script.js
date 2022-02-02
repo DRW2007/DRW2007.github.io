@@ -117,17 +117,17 @@ function minMax(type, value){
     if(type === "min"){
         for(var i = 0;i < 17; i++){
             if(stats[i][value][0] < minMax[0]){
-                minMax = stats[i][value][0]
+                minMax = stats[i][0]
             } else if(stats[i][value][0] == minMax[0] && stats[i][value][0] != stats[0][value][0]){
-                minMax.append(stats[i][value][0]);
+                minMax.append(stats[i][0]);
             }
         }
     } else if(type === "max"){
         for(var i = 0;i < 17; i++){
             if(stats[i][value][0] > minMax[0]){
-                minMax = stats[i][value][0]
+                minMax = stats[i][0]
             } else if(stats[i][value][0] == minMax[0] && stats[i][value][0] != stats[0][value][0]){
-                minMax.append(stats[i][value][0]);
+                minMax.append(stats[i][0]);
             }
         }
     } else{
