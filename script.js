@@ -81,3 +81,58 @@ function loadStats(){
     document.getElementById("wins").innerHTML = stats[agent][2][0];
     document.getElementById("losses").innerHTML = stats[agent][2][1];
 }
+
+function summary(choice){
+    var pos = document.getElementById("positive");
+    var mostWins = document.getElementById("mostWins");
+    var mostKills = document.getElementById("mostKills");
+
+    var neg = document.getElementById("negative");
+    var leastWins = document.getElementById("leastWins");
+    var leastKills = document.getElementById("leastKills");
+
+
+    var stats = getCookie("stats")
+
+
+    pos.style = "display: none;";
+    neg.style = "display: none;";
+
+    if(choice.value == 1){
+        mostWins.innerHTML = minMax("max", 2).join(" and ");
+        mostKills.innerHTML = minMax("max", 1).join(" and ");
+        pos.style = "display: show;";
+    } else if(choice.value == 2){
+        leastWins.innerHTML = minMax("min", 2).join(" and ");
+        leastKills.innerHTML = minMax("min", 1).join(" and ");
+        neg.style = "display: show;";
+    }
+    
+}
+
+//type determines if the function is finding the minimum or maximum || Value should be the index of the type of stat you want
+function minMax(type, value){
+    var stats = getCookie("stats");
+    var minMax = [stats[0][value][0]];
+    if(type === "min"){
+        for(var i = 0;i < 17; i++){
+            if(stats[i][value][0] < minMax[0]){
+                minMax = stats[i][value][0]
+            } else if(stats[i][value][0] == minMax[0] && stats[i][value][0] != stats[0][value][0]){
+                minMax.append(stats[i][value][0]);
+            }
+        }
+    } else if(type === "max"){
+        for(var i = 0;i < 17; i++){
+            if(stats[i][value][0] > minMax[0]){
+                minMax = stats[i][value][0]
+            } else if(stats[i][value][0] == minMax[0] && stats[i][value][0] != stats[0][value][0]){
+                minMax.append(stats[i][value][0]);
+            }
+        }
+    } else{
+        console.log("Error: Not a recognized data type for minMax(TYPE)");
+        return
+    }
+    return minMax;
+}
