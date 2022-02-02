@@ -115,20 +115,16 @@ function minMax(type, value){
     var stats = getCookie("stats");
     var minMax = [stats[0][value][0]];
     if(type === "min"){
-        for(var i = 0;i < 17; i++){
+        for(var i = 0;i < 17; i++;){
             if(stats[i][value][0] < minMax[0]){
                 minMax = stats[i][0]
-            } else if(stats[i][value][0] == minMax[0] && stats[i][value][0] != stats[0][value][0]){
-                minMax.append(stats[i][0]);
-            }
+            } 
         }
     } else if(type === "max"){
-        for(var i = 0;i < 17; i++){
+        for(var i = 0;i < 17; i++;){
             if(stats[i][value][0] > minMax[0]){
                 minMax = stats[i][0]
-            } else if(stats[i][value][0] == minMax[0] && stats[i][value][0] != stats[0][value][0]){
-                minMax.append(stats[i][0]);
-            }
+            } 
         }
     } else{
         console.log("Error: Not a recognized data type for minMax(TYPE)");
