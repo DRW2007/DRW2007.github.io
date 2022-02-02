@@ -107,27 +107,37 @@ function summary(choice){
         leastKills.innerHTML = minMax("min", 1);
         neg.style = "display: show;";
     }
+    
 }
 
 //type determines if the function is finding the minimum or maximum || Value should be the index of the type of stat you want
 function minMax(type, value){
     var stats = getCookie("stats");
     var minMax = [stats[0][value][0]];
+    var minMaxAgent = [stats[0][0]]
     if(type === "min"){
         for(var i = 0;i < 17; i++){
             if(stats[i][value][0] < minMax[0]){
-                minMax = stats[i][0]
-            } 
+                minMax = stats[i][value][0];
+                minMaxAgent = stats[i][0];
+            } else if(stats[i][value][0] == minMax[0] && stats[i][value][0] != stats[0][value][0]){
+                minMax.push(stats[i][value][0]);
+                minMaxAgent.push(stats[i][0]);
+            }
         }
     } else if(type === "max"){
         for(var i = 0;i < 17; i++){
             if(stats[i][value][0] > minMax[0]){
-                minMax = stats[i][0]
-            } 
+                minMax = stats[i][value][0];
+                minMaxAgent = stats[i][0];
+            } else if(stats[i][value][0] == minMax[0] && stats[i][value][0] != stats[0][value][0]){
+                minMax.push(stats[i][value][0]);
+                minMaxAgent.push(stats[i][0]);
+            }
         }
     } else{
         console.log("Error: Not a recognized data type for minMax(TYPE)");
         return
     }
-    return minMax;
+    return minMaxAgent;
 }
