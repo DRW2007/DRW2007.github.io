@@ -99,12 +99,12 @@ function summary(choice){
     neg.style = "display: none;";
 
     if(choice.value == 1){
-        mostWins.innerHTML = minMax("max", 2).join(" and ");
-        mostKills.innerHTML = minMax("max", 1).join(" and ");
+        mostWins.innerHTML = minMax("max", 2);
+        mostKills.innerHTML = minMax("max", 1);
         pos.style = "display: show;";
     } else if(choice.value == 2){
-        leastWins.innerHTML = minMax("min", 2).join(" and ");
-        leastKills.innerHTML = minMax("min", 1).join(" and ");
+        leastWins.innerHTML = minMax("min", 2);
+        leastKills.innerHTML = minMax("min", 1);
         neg.style = "display: show;";
     }
     
